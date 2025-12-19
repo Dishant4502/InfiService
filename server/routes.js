@@ -5,13 +5,14 @@ const { Project, Client, Contact, Subscriber } = require('./models');
 // --- PROJECTS ---
 // Get all projects
 router.get('/projects', async (req, res) => {
+    console.log("Incoming body:", req.body);
     try {
         const projects = await Project.find().sort({ createdAt: -1 });
         res.json(projects);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
-});
+});  
 
 // Add a project
 router.post('/projects', async (req, res) => {
