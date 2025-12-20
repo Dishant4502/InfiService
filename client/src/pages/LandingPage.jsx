@@ -19,12 +19,12 @@ const LandingPage = () => {
     }, []);
 
     const fetchProjects = async () => {
-        try { const res = await axios.get('/api/projects'); setProjects(res.data); }
+        try { const res = await axios.get('https://infiservice-1.onrender.com/api/projects'); setProjects(res.data); }
         catch (e) { console.error("Failed to fetch projects"); }
     };
 
     const fetchClients = async () => {
-        try { const res = await axios.get('/api/clients'); setClients(res.data); }
+        try { const res = await axios.get('https://infiservice-1.onrender.com/api/clients'); setClients(res.data); }
         catch (e) { console.error("Failed to fetch clients"); }
     };
 
@@ -32,7 +32,7 @@ const LandingPage = () => {
         e.preventDefault();
         setContactStatus('Sending...');
         try {
-            await axios.post('/api/contact', contactForm);
+            await axios.post('https://infiservice-1.onrender.com/api/contact', contactForm);
             setContactStatus('Message sent successfully!');
             setContactForm({ fullName: '', email: '', mobile: '', city: '' });
         } catch (e) {
@@ -45,7 +45,7 @@ const LandingPage = () => {
         if (!subEmail) return;
         setSubStatus('Subscribing...');
         try {
-            await axios.post('/api/subscribe', { email: subEmail });
+            await axios.post('https://infiservice-1.onrender.com/api/subscribe', { email: subEmail });
             setSubStatus('Subscribed!');
             setSubEmail('');
         } catch (e) {
@@ -58,7 +58,7 @@ const LandingPage = () => {
             {/* Navbar */}
             <nav style={{ padding: '1rem 0', borderBottom: '1px solid var(--border)' }}>
                 <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)' }}>Agency.</div>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)' }}>InfiService.</div>
                     <div>
                         <Link to="/admin" className="btn">Admin Panel</Link>
                     </div>

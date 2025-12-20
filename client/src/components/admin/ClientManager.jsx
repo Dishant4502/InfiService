@@ -16,7 +16,7 @@ const ClientManager = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            await axios.post('http://localhost:5000/api/clients', formData);
+            await axios.post('https://infiservice-1.onrender.com/api/clients', formData);
             setMessage('Client added successfully!');
             setFormData({ name: '', description: '', designation: '', image: '' });
         } catch (error) {

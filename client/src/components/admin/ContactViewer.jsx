@@ -10,7 +10,7 @@ const ContactViewer = () => {
 
     const fetchContacts = async () => {
         try {
-            const res = await axios.get('/api/contacts');
+            const res = await axios.get('https://infiservice-1.onrender.com/api/contacts');
             setContacts(res.data);
         } catch (error) {
             console.error(error);

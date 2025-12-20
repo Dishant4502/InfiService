@@ -16,7 +16,7 @@ const ProjectManager = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            await axios.post('http://localhost:5000/api/projects', formData);
+            await axios.post('https://infiservice-1.onrender.com/api/projects', formData);
             setMessage('Project added successfully!');
             setFormData({ name: '', description: '', image: '' });
         } catch (error) {

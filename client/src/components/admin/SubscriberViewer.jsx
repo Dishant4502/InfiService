@@ -10,7 +10,7 @@ const SubscriberViewer = () => {
 
     const fetchSubs = async () => {
         try {
-            const res = await axios.get('/api/subscribers');
+            const res = await axios.get('https://infiservice-1.onrender.com/api/subscribers');
             setSubs(res.data);
         } catch (error) {
             console.error(error);
